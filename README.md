@@ -1,16 +1,39 @@
 
-This repository showcases examples of structured data published to [Tansu](https://tansu.io) schema-backed topics, instantly accessible as [Apache Iceberg tables](https://iceberg.apache.org).
+This repository showcases examples of structured data published to schema-backed topics, instantly accessible as [Apache Iceberg tables](https://iceberg.apache.org).
 
 Prerequisites:
-- [docker](https://www.docker.com), used to run [tansu](https://tansu.io), [minio](https://min.io), and Apache Iceberg REST Catalog
-- [just](https://github.com/casey/just), a handy way to save and run project-specific commands
-- [uv](https://github.com/astral-sh/uv), an extremely fast Python package and project manager used to run the [pyiceberg](https://py.iceberg.apache.org) examples
+- **[docker](https://www.docker.com)**, using [compose.yaml](compose.yaml) which runs [tansu](https://tansu.io), [minio](https://min.io), and Apache Iceberg REST Catalog
+- **[just](https://github.com/casey/just)**, a handy way to save and run project-specific commands
+- **[uv](https://github.com/astral-sh/uv)**, an extremely fast Python package and project manager used to run the [pyiceberg](https://py.iceberg.apache.org) examples
 
-The [justfile](./justfile) contains recipes to run [MinIO](https://min.io), create the buckets, and run the Apache Iceberg REST catalog with [Tansu](https://tansu.io). To start everything:
+[justfile](./justfile) contains recipes to run [MinIO](https://min.io), create the buckets, and run the Apache Iceberg REST catalog with [Tansu](https://tansu.io).
+
+Start by cloning this reposistory and start everything by:
 
 ```shell
 just
 ```
+
+Should result in:
+
+```
+✔ Network example-pyiceberg_default
+✔ Volume "example-pyiceberg_minio"
+✔ Container example-pyiceberg-minio-1
+mc: Configuration written to `/tmp/.mc/config.json`. Please update your access credentials.
+mc: Successfully created `/tmp/.mc/share`.
+mc: Initialized share uploads `/tmp/.mc/share/uploads.json` file.
+mc: Initialized share downloads `/tmp/.mc/share/downloads.json` file.
+The cluster 'local' is ready
+Added `local` successfully.
+Bucket created successfully `local/tansu`.
+Bucket created successfully `local/lake`.
+✔ Container example-pyiceberg-minio-1
+✔ Container example-pyiceberg-iceberg-catalog-1
+✔ Container example-pyiceberg-tansu-1  Healthy
+```
+
+Done! You can now run the examples.
 
 ## Taxi
 
