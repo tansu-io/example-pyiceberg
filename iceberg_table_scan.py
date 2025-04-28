@@ -1,6 +1,5 @@
-import os
-
 from pyiceberg.catalog import load_catalog
+import sys
 
 catalog = load_catalog('default', **{
         'uri': 'http://localhost:8181',
@@ -9,7 +8,7 @@ catalog = load_catalog('default', **{
         's3.secret-access-key': 'minioadmin',
     })
 
-table = catalog.load_table("tansu.observation")
+table = catalog.load_table(sys.argv[1])
 
 print(table.location())
 print(table.schema())
