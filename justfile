@@ -73,6 +73,20 @@ iceberg-table-scan table:
     uv run iceberg_table_scan.py {{table}}
 
 
+## Employee
+
+# create employee topic with schema/employee.proto
+employee-topic-create: (topic-create "employee")
+
+# produce data/persons.json with schema/person.json
+employee-produce: (cat-produce "employee" "data/employees.json")
+
+# consume employee topic
+employee-consume: (cat-consume "employee")
+
+# iceberg employee table scan
+employee-table-scan: (iceberg-table-scan "tansu.employee")
+
 
 ## Person
 
