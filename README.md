@@ -8,9 +8,11 @@ Prerequisites:
 
 [justfile](./justfile) contains recipes to run [MinIO](https://min.io), create the buckets, and run the Apache Iceberg REST catalog with [Tansu](https://tansu.io).
 
-Start by cloning this reposistory and start everything by:
+Once you have the prerequisites installed, clone this repository and start everything up with:
 
 ```shell
+git clone git@github.com:tansu-io/example-pyiceberg.git
+cd example-pyiceberg
 just up
 ```
 
