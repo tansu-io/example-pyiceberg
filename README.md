@@ -2,7 +2,7 @@
 This repository showcases examples of structured data published to schema-backed topics, instantly accessible as [Apache Iceberg tables](https://iceberg.apache.org).
 
 Prerequisites:
-- **[docker](https://www.docker.com)**, using [compose.yaml](compose.yaml) which runs [tansu](https://tansu.io), [minio](https://min.io), and Apache Iceberg REST Catalog
+- **[docker](https://www.docker.com)**, using [compose.yaml](compose.yaml) which runs [tansu](https://tansu.io), [minio](https://min.io) and an [Apache Iceberg REST Catalog](https://iceberg.apache.org/terms/#decoupling-using-the-rest-catalog)
 - **[just](https://github.com/casey/just)**, a handy way to save and run project-specific commands
 - **[uv](https://github.com/astral-sh/uv)**, an extremely fast Python package and project manager used to run the [pyiceberg](https://py.iceberg.apache.org) examples
 
