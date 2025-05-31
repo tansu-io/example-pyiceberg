@@ -18,7 +18,7 @@ services:
       timeout: 5s
   tansu:
     image: ${TANSU_IMAGE}
-    pull_policy: always
+    pull_policy: missing
     restart: unless-stopped
     environment:
       ADVERTISED_LISTENER_URL: ${ADVERTISED_LISTENER_URL}
@@ -33,6 +33,7 @@ services:
       RUST_LOG: ${RUST_LOG}
       SCHEMA_REGISTRY: ${SCHEMA_REGISTRY}
       STORAGE_ENGINE: ${STORAGE_ENGINE}
+    command: ["broker", "iceberg"]
     volumes:
       - ./schema/:/schema/
       - ./data/:/data/
